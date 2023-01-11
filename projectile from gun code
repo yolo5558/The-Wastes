@@ -1,0 +1,31 @@
+package com.example.mymod.projectile;
+
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.World;
+
+public class ProjectileMyMod extends EntityThrowable {
+
+    public ProjectileMyMod(World worldIn) {
+        super(worldIn);
+    }
+
+    public ProjectileMyMod(World worldIn, EntityLivingBase throwerIn) {
+        super(worldIn, throwerIn);
+    }
+
+    public ProjectileMyMod(World worldIn, double x, double y, double z) {
+        super(worldIn, x, y, z);
+    }
+
+    @Override
+    protected void onImpact(RayTraceResult result) {
+        if (result.entityHit != null) {
+            // Apply damage to the hit entity
+        } else {
+            // Spawn particles or spawn new entities
+        }
+        setDead();
+    }
+}
